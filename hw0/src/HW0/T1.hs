@@ -15,10 +15,10 @@ distrib :: Either a (b, c) -> (Either a b, Either a c)
 distrib = undefined
 
 flipIso :: (a <-> b) -> (b <-> a)
-flipIso = undefined
+flipIso (Iso f g) = Iso g f
 
 runIso :: (a <-> b) -> (a -> b)
-runIso = undefined
+runIso (Iso f _) = f
 
 assocPair :: (a, (b, c)) <-> ((a, b), c)
 assocPair = undefined

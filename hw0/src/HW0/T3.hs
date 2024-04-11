@@ -9,15 +9,15 @@ module HW0.T3
 
 -- S
 s :: (a -> b -> c) -> (a -> b) -> (a -> c)
-s = undefined
+s f g x = f x (g x)
 
 -- K
 k :: a -> b -> a
-k = undefined
+k x y = x
 
 -- I
 i :: a -> a
-i = undefined
+i = s k k
 
 -- B
 compose :: (b -> c) -> (a -> b) -> (a -> c)
